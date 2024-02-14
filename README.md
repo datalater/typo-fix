@@ -44,6 +44,7 @@ GitHub URL에서 PR을 작성할 때 이상한 특수문자가 입력되더라�
 
 이상한 특수문자가 입력되는 이슈 제보:
 
+- [Apple Community - Korean keyboard keeps mistyping](https://discussions.apple.com/thread/253806606?sortBy=best)
 - https://github.com/microsoft/vscode/issues/148356
 - https://github.com/microsoft/vscode/issues/171388
 - https://jybaek.tistory.com/954
