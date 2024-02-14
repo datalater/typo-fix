@@ -1,0 +1,8 @@
+{
+  "name": "typo-fix",
+  "version": "1.0.0",
+  "description": "Fix unexpected typos when typing in Korean on macOS.",
+  "main": "index.js",
+  "author": "Min <the7mincheol@gmail.com>",
+  "license": "ISC"
+}
