@@ -1,10 +1,10 @@
 # 제어 문자 (Control Characters)
 
-### 1. Filter Characters에 있는 코드들을 통칭하는 개념
+## Filter Characters에 있는 코드들을 통칭하는 개념
 
-Filter Characters에 있는 코드들은 주로 **제어 문자 (Control Characters)** 또는 **비표시 문자 (Non-printable Characters)**로 통칭됩니다. 제어 문자는 텍스트 데이터에서 특수한 기능을 수행하거나 표시되지 않는 문자들을 포함합니다. 이러한 문자는 텍스트 영역이나 다른 사용자 인터페이스 요소에서 예기치 않은 동작을 유발할 수 있습니다.
+Filter Characters에 있는 코드들은 주로 **제어 문자 (Control Characters)** 또는 **비표시 문자 (Non-printable Characters)** 로 통칭됩니다. 제어 문자는 텍스트 데이터에서 특수한 기능을 수행하거나 표시되지 않는 문자들을 포함합니다. 이러한 문자는 텍스트 영역이나 다른 사용자 인터페이스 요소에서 예기치 않은 동작을 유발할 수 있습니다.
 
-### 2. 비슷한 성격의 유니코드 목록
+## 비슷한 성격의 유니코드 목록
 
 다음 표는 Filter Characters와 비슷한 성격의 유니코드를 의미와 함께 정리한 것입니다:
 
@@ -54,7 +54,7 @@ Filter Characters에 있는 코드들은 주로 **제어 문자 (Control Charact
 
 <!-- prettier-ignore-end -->
 
-### 표에 대한 설명
+## 표에 대한 설명
 
 - **Control Characters (U+0000 ~ U+001F, U+007F)**: 주로 텍스트 처리를 제어하기 위한 문자들로, 텍스트 편집기나 터미널에서 사용됩니다.
 - **Whitespace and Separator Characters**:

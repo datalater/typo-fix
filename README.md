@@ -9,7 +9,7 @@ macOS 유저가 GitHub에서 PR을 한국어로 작성하다보면 이상한 특
 
 ## 데모
 
-https://github.com/datalater/typo-fix/assets/8105528/48735a16-23db-480f-bd1f-5c2863c24ab2
+https://github.com/datalater/typo-fix/assets/8105528/c5fb3cbf-a14b-40aa-b88c-b07c56170383
 
 ## 설치
 
@@ -58,3 +58,8 @@ PNG 이미지를 아이콘으로 변환하기:
 
 - https://pixlr.com/kr/express/
 - https://www.iloveimg.com/resize-image/resize-png#resize-options,pixels
+
+영상에 자막 추가하기:
+
+- [MDN - Adding captions and subtitles to HTML video](https://developer.mozilla.org/en-US/docs/Web/Media/Audio_and_video_delivery/Adding_captions_and_subtitles_to_HTML5_video)
+- [happyscribe - Free VTT Editor](https://www.happyscribe.com/subtitle-tools/vtt-editor-online)
