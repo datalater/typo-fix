@@ -15,6 +15,31 @@ const filterCharacters = Object.freeze({
 
 const FILTER_CHARACTERS = Object.values(filterCharacters);
 
+class TextFilter {
+  constructor(text) {
+    this.text = text;
+  }
+
+  get encoded() {
+    return encodeURI(this.text);
+  }
+
+  get hasFilterCharacters() {
+    return containsAny(this.encoded, FILTER_CHARACTERS);
+  }
+
+  get filtered() {
+    let encodedValue = this.encoded;
+
+    FILTER_CHARACTERS.forEach((filterChar) => {
+      const regex = new RegExp(escapeRegExp(filterChar), "g");
+      encodedValue = encodedValue.replace(regex, "");
+    });
+
+    return decodeURI(encodedValue);
+  }
+}
+
 main();
 
 function main() {
@@ -34,6 +59,29 @@ function main() {
   });
 }
 
+function bindHandler() {
+  document.querySelectorAll("textarea").forEach((input) => {
+    if (input.dataset.alreadyBound) return;
+    input.dataset.alreadyBound = "true";
+
+    input.addEventListener("blur", function handler(event) {
+      const textFilter = new TextFilter(event.target.value);
+
+      if (!textFilter.hasFilterCharacters) return;
+
+      event.target.value = textFilter.filtered;
+    });
+  });
+}
+
+function containsAny(str, characters) {
+  return characters.some((char) => str.includes(char));
+}
+
+function escapeRegExp(string) {
+  return string.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
+}
+
 function dev() {
   const body = document.querySelector("body");
 
@@ -45,32 +93,4 @@ function dev() {
       <span>Content Script DevTools</span>
     </div>
   `;
-}
-
-function bindHandler() {
-  document.querySelectorAll("textarea").forEach((input) => {
-    if (input.dataset.alreadyBound) return;
-    input.dataset.alreadyBound = "true";
-
-    input.addEventListener("blur", function handler(event) {
-      let encodedValue = encodeURI(event.target.value);
-
-      if (!containsAny(encodedValue, FILTER_CHARACTERS)) return;
-
-      FILTER_CHARACTERS.forEach((filterChar) => {
-        const regex = new RegExp(escapeRegExp(filterChar), "g");
-        encodedValue = encodedValue.replace(regex, "");
-      });
-
-      event.target.value = decodeURI(encodedValue);
-    });
-  });
-}
-
-function containsAny(str, characters) {
-  return characters.some((char) => str.includes(char));
-}
-
-function escapeRegExp(string) {
-  return string.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
 }
