@@ -1,9 +1,21 @@
 // console.log("Content Script Loaded");
+// dev();
 
-const FILTER_CHARACTERS = ["%08", "%EF%BF%BD", "%1C", "%1D"];
+/**
+ * 특정 제어 문자들을 URL 인코딩된 값으로 정의한 객체입니다.
+ * @see {@link ./docs/control-characters.md}
+ */
+const filterCharacters = Object.freeze({
+  backspace: "%08",
+  replacementCharacter: "%EF%BF%BD",
+  fileSeparator: "%1C",
+  groupSeparator: "%1D",
+  unitSeparator: "%1F",
+});
+
+const FILTER_CHARACTERS = Object.values(filterCharacters);
 
 main();
-// dev();
 
 function main() {
   bindHandler();

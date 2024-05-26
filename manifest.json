@@ -1,7 +1,7 @@
 {
   "manifest_version": 3,
   "name": "TypoFix",
-  "version": "1.0",
+  "version": "1.1.0",
   "author": "Min <the7mincheol@gmail.com>",
   "description": "Fix unexpected typos when typing in Korean on macOS.",
   "icons": {
