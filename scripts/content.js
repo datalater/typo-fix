@@ -10,6 +10,7 @@ const filterCharacters = Object.freeze({
   replacementCharacter: "%EF%BF%BD",
   fileSeparator: "%1C",
   groupSeparator: "%1D",
+  recordSeparator: "%1E",
   unitSeparator: "%1F",
 });
 
@@ -69,7 +70,9 @@ function bindHandler() {
 
       if (!textFilter.hasFilterCharacters) return;
 
-      event.target.value = textFilter.filtered;
+      input.value = textFilter.filtered;
+      // React가 감지하도록 이벤트를 발생시킵니다.
+      input.dispatchEvent(new Event("input", { bubbles: true }));
     });
   });
 }
